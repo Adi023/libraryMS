@@ -13,7 +13,7 @@ import com.lms.services.MembersServices;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/members")
+@RequestMapping("/members")
 public class MembersController {
 
     private static final Logger logger = LoggerFactory.getLogger(MembersController.class);
