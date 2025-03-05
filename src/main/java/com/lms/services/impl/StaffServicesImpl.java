@@ -57,7 +57,7 @@ public class StaffServicesImpl implements StaffServices {
 			
 			staff.setMemberId(staffDto.getMemberId());
 			staff.setSalary(staffDto.getSalary());
-			staff.setSpecialization(staffDto.getSpcialization());
+			staff.setSpecialization(staffDto.getSpecialization());
 			staff.setDateOfHire(staffDto.getDateOfHire());
 			
 			Staff updatedStaff=staffRepo.save(staff);
