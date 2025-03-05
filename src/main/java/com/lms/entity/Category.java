@@ -1,6 +1,8 @@
 package com.lms.entity;
 
 import java.sql.Timestamp;
+import java.util.List;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import jakarta.persistence.CascadeType;
@@ -40,7 +42,7 @@ public class Category {
 	
 	@OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinColumn(name = "books",insertable=false,updatable=false)
-	private Books books;
+	private List<Books> books;
 	
 	@Column(name="description")
 	private String description;
