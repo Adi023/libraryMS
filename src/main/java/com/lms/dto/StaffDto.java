@@ -20,5 +20,5 @@ public class StaffDto {
 	private Members member;
 	private LocalDate dateOfHire;
 	private long salary;
-	private String spcialization;
+	private String specialization;
 }
