@@ -34,7 +34,7 @@ public class Staff {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long staffId;
 	
-	@Column(nullable = false)
+	@Column(name="member")
 	private Long memberId;
 	
 	@OneToOne(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
