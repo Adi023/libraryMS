@@ -30,10 +30,10 @@ public class Books {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long ISBN;
 	
-	@Column(name = "title")
+	@Column(nullable = false)
 	private String title;
 
-	@Column(name = "author")
+	@Column(nullable = false)
 	private String author;
 
 	@Column(name = "publisher")
@@ -42,18 +42,18 @@ public class Books {
 	@Column(name = "publicationDate")
 	private LocalDate publicationDate;
 
-	@Column(name = "totalQuantity")
+	@Column(nullable = false)
 	private Long totalQuantity;
 
 	@Column(name = "availableQuantity")
 	private Long availableQuantity;
 	
 	@CreationTimestamp 
-	@Column(name="timestamp")
+	@Column(name = "created_at", updatable = false)
 	private Timestamp  ts;
 	 
 	@UpdateTimestamp
-	@Column(name="updatedTime")
+	@Column(name = "updated_at")
 	private Timestamp updatedTime;
 
 }

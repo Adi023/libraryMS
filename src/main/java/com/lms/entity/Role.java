@@ -28,14 +28,14 @@ public class Role {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer roleID;
 	
-	@Column(name = "roleName")
+	@Column(nullable = false)
 	private String roleName;
 
 	@CreationTimestamp 
-	@Column(name="timestamp")
+	@Column(name = "created_at", updatable = false)
 	private Timestamp  ts;
 	 
 	@UpdateTimestamp
-	@Column(name="updatedTime")
+	@Column(name = "updated_at")
 	private Timestamp updatedTime;
 }

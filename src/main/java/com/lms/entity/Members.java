@@ -34,19 +34,19 @@ public class Members {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long memberId;
 	
-	@Column(name = "memberName")
+	@Column(nullable = false)
 	private String memberName;
 	
-	@Column(name = "email")
+	@Column(nullable = false)
 	private String email;
 	
-	@Column(name = "phoneNumber")
+	@Column(nullable = false)
 	private String phoneNumber;
 	
 	@Column(name = "address")
 	private String address;
 	
-	@Column(name = "gender")
+	@Column(nullable = false)
 	private String gender;
 	
 	@Column(name = "isActive")
@@ -66,11 +66,11 @@ public class Members {
 	private Role role;
 	
 	@CreationTimestamp 
-	@Column(name="timestamp")
+	@Column(name = "created_at", updatable = false)
 	private Timestamp  ts;
 	 
 	@UpdateTimestamp
-	@Column(name="updatedTime")
+	@Column(name = "updated_at")
 	private Timestamp updatedTime;
 
 }

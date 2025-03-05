@@ -34,28 +34,28 @@ public class Staff {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long staffId;
 	
-	@Column(name = "member")
+	@Column(nullable = false)
 	private Long memberId;
 	
 	@OneToOne(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	@JoinColumn(name="member",insertable=false,updatable = false)
 	private Members member;
 	
-	@Column(name = "dateOfHire")
+	@Column(nullable = false)
 	private LocalDate dateOfHire;
 	
 	@Column(name="salary")
-	  private long salary;
+	private long salary;
 	  
 	@Column(name="specialization")
 	private String specialization;
 	
 	@CreationTimestamp 
-	@Column(name="timestamp")
+	@Column(name = "created_at", updatable = false)
 	private Timestamp  ts;
 	 
 	@UpdateTimestamp
-	@Column(name="updatedTime")
+	@Column(name = "updated_at")
 	private Timestamp updatedTime;
 
 }

@@ -9,5 +9,5 @@ public interface MembersServices {
 	public MembersDto updateMember(MembersDto member);
 	public MembersDto getMemberById(Long membersId);
 	public List<MembersDto> getAllMember();
-	public String deleteMember(Long membersId);
+//	public String deleteMember(Long membersId);
 }

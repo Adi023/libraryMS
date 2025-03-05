@@ -9,5 +9,5 @@ public interface CategoryServices {
 	public CategoryDto updateCategory(CategoryDto category);
 	public CategoryDto getCategoryById(Long categoryId);
 	public List<CategoryDto> getAllCategories();
-	public String deleteCategory(Long categoryId);
+//	public String deleteCategory(Long categoryId);
 }

@@ -9,5 +9,5 @@ public interface StaffServices {
 	public StaffDto updateStaff(StaffDto staffDto);
 	public StaffDto getStaffById(Long staffId);
 	public List<StaffDto> getAllStaff();
-	public String deleteStaff(Long staffId);
+//	public String deleteStaff(Long staffId);
 }

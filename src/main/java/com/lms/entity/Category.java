@@ -32,7 +32,7 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long categoryId;
 	
-	@Column(name="categoryName")
+	@Column(nullable = false)
 	private String categoryName;
 	
 	@Column(name = "books")
@@ -46,11 +46,11 @@ public class Category {
 	private String description;
 
 	@CreationTimestamp 
-	@Column(name="timestamp")
+	@Column(name = "created_at", updatable = false)
 	private Timestamp  ts;
 	 
 	@UpdateTimestamp
-	@Column(name="updatedTime")
+	@Column(name = "updated_at")
 	private Timestamp updatedTime;
 
 }

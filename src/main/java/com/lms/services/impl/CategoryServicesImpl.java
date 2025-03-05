@@ -53,19 +53,19 @@ public class CategoryServicesImpl implements CategoryServices {
 		}
 		try {
 			Category category = categoryRepo.findById(categoryDto.getCategoryId())
-					.orElseThrow(() -> new ResourceNotFound("Category not found with ISBN: " + categoryDto.getCategoryId()));
+					.orElseThrow(() -> new ResourceNotFound("Category not found with categoryId: " + categoryDto.getCategoryId()));
 			
 			category.setCategoryName(categoryDto.getCategoryName());
 			category.setDescription(categoryDto.getDescription());
 			category.setISBN(categoryDto.getISBN());
 	
 			Category updatedCategory=categoryRepo.save(category);
-			logger.info("Category updated successfully: CategoryId {}", updatedCategory.getISBN());
+			logger.info("Category updated successfully: CategoryId {}", updatedCategory.getCategoryId());
 			
 			return entityToDto(updatedCategory);
 
 		} catch (ResourceNotFound e) {
-	        logger.warn("Update failed - Category not found: CategoryId {}", categoryDto.getISBN());
+	        logger.warn("Update failed - Category not found: CategoryId {}", categoryDto.getCategoryId());
 	        throw e; // Re-throw the ResourceNotFound exception
 
 	    } catch (Exception e) {
@@ -77,11 +77,11 @@ public class CategoryServicesImpl implements CategoryServices {
 	@Override
 	public CategoryDto getCategoryById(Long categoryId) {
 		if (categoryId == null) {
-			throw new IllegalArgumentException("ISBN no is null");
+			throw new IllegalArgumentException("CategoryId no is null");
 		}
 
 		Category category = categoryRepo.findById(categoryId).orElseThrow(() -> new ResourceNotFound("Category not found with this ID"));
-		logger.info("Category found : ISBN {}", categoryId);
+		logger.info("Category found : Category Id {}", categoryId);
 		return entityToDto(category);
 	}
 
@@ -105,11 +105,11 @@ public class CategoryServicesImpl implements CategoryServices {
 		}
 	}
 
-	@Override
-	public String deleteCategory(Long categoryId) {
-		
-		return null;
-	}
+//	@Override
+//	public String deleteCategory(Long categoryId) {
+//		
+//		return null;
+//	}
 	
 	public CategoryDto entityToDto(Category category) {
 		return modelMapper.map(category, CategoryDto.class);
