@@ -32,7 +32,7 @@ public class BooksController  {
 
 	@PostMapping
 	public ResponseEntity<BooksDto> addBook(@RequestBody BooksDto bookDto) {
-		logger.info("Recived request to add book: {}"+bookDto.getTitle());
+		logger.info("Recived request to add books: {}"+bookDto.getTitle());
 		
 		try {
 			BooksDto savedBook = bookService.addBook(bookDto);
