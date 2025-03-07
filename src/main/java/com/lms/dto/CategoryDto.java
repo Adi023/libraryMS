@@ -1,6 +1,6 @@
 package com.lms.dto;
 
-import java.time.LocalDate;
+import java.util.List;
 
 import com.lms.entity.Books;
 
@@ -21,6 +21,6 @@ public class CategoryDto {
 	private Long categoryId;
 	private String categoryName;
 	private Long ISBN;
-	private Books books;
+	private List<Books> books;
 	private String description;
 }
